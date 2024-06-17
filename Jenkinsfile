@@ -17,7 +17,7 @@ pipeline {
 
     post {
         always {
-            robot publisher: [
+            robot(
                 disableArchiveOutput: false,
                 logFileName: 'results/log.html',
                 onlyCritical: true,
@@ -27,7 +27,7 @@ pipeline {
                 passThreshold: 90,
                 reportFileName: 'results/report.html',
                 unstableThreshold: 100
-            ]
+            )
         }
     }
 }
